@@ -1,18 +1,18 @@
 ext {
     //android开发版本配置
     android = [
-            compileSdkVersion: 29,
-            buildToolsVersion: "29.0.2",
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.0",
             applicationId    : "com.james.motion",
             minSdkVersion    : 19,
-            targetSdkVersion : 29,
+            targetSdkVersion : 28,
             versionCode      : 1,
             versionName      : "1.0",
             java_version     : JavaVersion.VERSION_1_8,
     ]
     //version配置
     versions = [
-            "appcompat-version"         : "1.1.0",
+            "appcompat-version"         : "1.2.0",
             "annotation-version"        : "1.1.0",
             "recyclerview-version"      : "1.1.0-beta04",
             "swiperefreshlayout-version": "1.0.0",
@@ -36,6 +36,8 @@ ext {
             'androidtestimplementation_ext'     : "androidx.test.ext:junit:${versions["test_ext"]}",
             'androidtestimplementation_espresso': "androidx.test.espresso:espresso-core:${versions["test_espresso"]}",
     ]
+//    //proguard-rules缺少：-keep public class com.android.vending.licensing.ILicensingService
+//    licensing = ["com.google.android.vending:play-licensing:1.0.0"]
     //依赖第三方配置
     dependencies = [
             //json解析
@@ -54,13 +56,15 @@ ext {
             immersionbar_components : "com.gyf.immersionbar:immersionbar-components:3.0.0",
             //FlycoTabLayout_Lib
             flycotablayout_lib      : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            //multidex
+            multidex                : "com.android.support:multidex:1.0.3",
 
-            //地图
+//            地图
 //            Map_3D                  : "com.amap.api:3dmap:latest.integration",
 //            Map_search              : "com.amap.api:search:latest.integration",
 //            Map_location            : "com.amap.api:location:latest.integration",
 
-            // 内存泄漏检测
+//             内存泄漏检测
             leakcanary_debug        : "com.squareup.leakcanary:leakcanary-android:1.6.3",
             leakcanary_release      : "com.squareup.leakcanary:leakcanary-android-no-op:1.6.3",
             leakcanary_debug_fragmen: "com.squareup.leakcanary:leakcanary-support-fragment:1.6.3",
